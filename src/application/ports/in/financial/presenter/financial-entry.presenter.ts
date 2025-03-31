@@ -1,4 +1,4 @@
-import { FinancialEntry } from 'src/domain/financial/financial_entry.domain';
+import { FinancialMovement } from 'src/domain/financial/financial-moviment.domain';
 import { UnitPresenter } from 'src/mapper/mapper';
 
-export type FinancialEntryPresenter = UnitPresenter<FinancialEntry>;
+export type FinancialEntryPresenter = UnitPresenter<FinancialMovement>;

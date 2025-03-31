@@ -1,4 +1,4 @@
-import { FinancialEntry } from 'src/domain/financial/financial_entry.domain';
+import { FinancialMovement } from 'src/domain/financial/financial-moviment.domain';
 import { Repository } from 'src/domain/types/repository';
 
-export abstract class FinancialEntryRepository extends Repository<FinancialEntry> {}
+export abstract class FinancialEntryRepository extends Repository<FinancialMovement> {}
