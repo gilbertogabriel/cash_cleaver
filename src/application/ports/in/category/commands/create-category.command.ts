@@ -14,7 +14,7 @@ export class CreateCategoryCommand {
   get name(): string {
     return this._name;
   }
-  Props;
+  
   get description(): string | undefined {
     return this._description;
   }

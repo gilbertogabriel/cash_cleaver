@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id                    String                  @id @default(cuid())
+  name                  String?
+  email                 String?                 @unique
+  phoneNumber           String?                 @unique
+  createdAt             DateTime                @default(now())
+  updatedAt             DateTime                @updatedAt
+  deletedAt             DateTime?
+  finantial_transaction finantial_transaction[]
+}
+
+model category {
+  id                    Int                     @id @default(autoincrement())
+  name                  String                  @unique
+  description           String?
+  createdAt             DateTime                @default(now())
+  updatedAt             DateTime                @updatedAt
+  deletedAt             DateTime?
+  finantial_transaction finantial_transaction[]
+}
+
+model finantial_transaction {
+  id          Int       @id @default(autoincrement())
+  userId      String
+  categoryId  Int
+  amount      Float
+  type        String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+
+  user                     user                       @relation(fields: [userId], references: [id])
+  category                 category                   @relation(fields: [categoryId], references: [id])
+  finantial_payment_method finantial_payment_method[]
+}
+
+model finantial_payment_method {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+
+  finantial_transaction finantial_transaction[]
+}
