@@ -1,0 +1,20 @@
+FROM node:current-alpine3.22
+
+RUN apk update && \
+    apk add --no-cache curl && \
+    npm install -g nodemon
+
+
+#RUN adduser -D -u 1000 xpto - CRIAR UM NOVO USUÁRIO COMPATIVEL COM O DA IMAGEM CASO O ID SEJA DIFERENTE  
+
+#Usuário não root para utilizar o container sem as permissões do root
+USER node
+
+# estabelecido o diretório de trabalho do user node
+WORKDIR /home/node/app
+
+COPY package.json ./
+RUN npm install
+
+EXPOSE 3000 5432
+

@@ -1,7 +1,7 @@
 {
   "name": "cash_cleaver",
   "version": "0.0.1",
-  "description": "",
+  "description": "<p align=\"center\">   <a href=\"http://nestjs.com/\" target=\"blank\"><img src=\"https://nestjs.com/img/logo-small.svg\" width=\"120\" alt=\"Nest Logo\" /></a> </p>",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
@@ -20,15 +20,16 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@nestjs/common": "^11.0.1",
+    "@nestjs/common": "^11.1.6",
     "@nestjs/config": "^4.0.1",
-    "@nestjs/core": "^11.0.1",
-    "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/platform-express": "^11.1.6",
     "@nestjs/swagger": "^11.0.7",
     "@prisma/client": "^6.8.2",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "date-fns": "^4.1.0",
+    "nest": "^0.1.6",
     "prisma": "^6.8.2",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
@@ -77,5 +78,19 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilbertogabriel/cash_cleaver.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gilbertogabriel/cash_cleaver/issues"
+  },
+  "homepage": "https://github.com/gilbertogabriel/cash_cleaver#readme"
 }

@@ -18,7 +18,7 @@ model user {
   id            String   @id @default(uuid())
   email         String   @unique // O e-mail deve ser único para login
   name          String
-  password_hash String
+  password_hash String // O hash da senha, nunca a senha em texto plano
   created_at    DateTime @default(now())
   updated_at    DateTime @updatedAt
 
